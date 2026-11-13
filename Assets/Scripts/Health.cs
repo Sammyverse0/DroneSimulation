@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
     [SerializeField] Color flashColor = new Color(1f, 0f, 0f, 0.5f);
     [SerializeField] float fadeSpeed = 5f;
 
+    public static event System.Action<Health> Died;
+
     float current;
 
     void Awake()
@@ -81,6 +83,7 @@ public class Health : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
 
         onDeath.Invoke();
+        Died?.Invoke(this);
         Destroy(gameObject);
     }
 }

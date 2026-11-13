@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9056151814519677922}
   m_Layer: 0
   m_Name: Visual
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,6 +220,10 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  hitClip: {fileID: 0}
+  healthFill: {fileID: 0}
+  fullColor: {r: 0, g: 1, b: 0, a: 1}
+  lowColor: {r: 1, g: 0, b: 0, a: 1}
   RedFlash: {fileID: 0}
   flashColor: {r: 1, g: 0, b: 0, a: 0.5}
   fadeSpeed: 5
@@ -238,12 +242,10 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   waitAtWaypoint: 1.5
   animator: {fileID: 0}
-  detectionRange: 20
-  loseRange: 26
+  detectionRange: 16
+  loseRange: 22
   eyeHeight: 1.6
   muzzle: {fileID: 3583689073215392927}
   bulletPrefab: {fileID: 3075800453708520159, guid: 84d3229462605404d8403dccfa0f24d4, type: 3}

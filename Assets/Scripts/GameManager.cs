@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         winPanel.SetActive(false);
         losePanel.SetActive(false);
@@ -69,16 +70,19 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
+        AudioListener.pause = true;
     }
 
     public void Restart()
     {
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadMenu()
     {
+        AudioListener.pause = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(menuSceneIndex);
     }
